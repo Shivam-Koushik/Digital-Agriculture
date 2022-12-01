@@ -3,21 +3,30 @@ const route = express.Router()
 const passport = require("passport")
 const signUpControllers = require("../controller/register")
 const cropContrllers = require("../controller/crop")
+const organizationController = require("../controller/organization")
+const propertyController = require("../controller/property")
 const middlewareController = require("../middleware/middleware")
 
-//____________________________Admin
+//==============================================Google Authentication====================================================
 route.get("/",(req,res)=>res.render('index'))
-route.get('/google',
-  passport.authenticate('google', { scope: ['profile'] }));
- 
-route.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/' }),
-  (req, res) =>{
-    res.render('/');
-  });
+route.get('/google', passport.authenticate('google', { scope: ['profile'] }));
+route.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) =>{ res.render('/'); });
 
+//=================================================Register Api==========================================================
 route.post("/signUp",signUpControllers.signUp)
 route.post("/login",signUpControllers.login)
+
+//===============================================Organization Api========================================================
+route.post("/createOrganization",organizationController.createOrganization)
+route.put("/updateCropList/:organizationId",organizationController.updateCropList)
+
+//=================================================Property Api==========================================================
+route.post("/createProperty/:organizationId",propertyController.createProperty)
+route.put("/updateProperty/:propertyId",propertyController.updateProperty)
+route.get("/filterProperty",propertyController.filterProperty)
+
+//===================================================crop Api============================================================
 route.post("/createCrop/:userId",cropContrllers.createCrop)
 route.get("/filterCrop/:cropId",middlewareController.authentication,middlewareController.authorisation,cropContrllers.filterCrop)
 route.put("/updateCrop/:cropId",middlewareController.authentication,middlewareController.authorisation,cropContrllers.updateCrop)
