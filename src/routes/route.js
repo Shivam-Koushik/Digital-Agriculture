@@ -5,6 +5,8 @@ const signUpControllers = require("../controller/register")
 const cropContrllers = require("../controller/crop")
 const organizationController = require("../controller/organization")
 const propertyController = require("../controller/property")
+const regionController = require("../controller/region")
+const fieldController = require("../controller/field")
 const middlewareController = require("../middleware/middleware")
 
 //==============================================Google Authentication====================================================
@@ -25,6 +27,15 @@ route.put("/updateCropList/:organizationId",organizationController.updateCropLis
 route.post("/createProperty/:organizationId",propertyController.createProperty)
 route.put("/updateProperty/:propertyId",propertyController.updateProperty)
 route.get("/filterProperty",propertyController.filterProperty)
+
+//==================================================Region Api===========================================================
+route.post("/createRegion/:propertyId",regionController.createRegion) 
+route.put("/updateRegion/:regionId",regionController.updateRegion) 
+route.get("/listRegion",regionController.listRegion) 
+
+// =================================================Field Api============================================================
+route.post("/createField/:userId",fieldController.createField)
+route.get("/filterField/:userId",fieldController.filterField)
 
 //===================================================crop Api============================================================
 route.post("/createCrop/:userId",cropContrllers.createCrop)
