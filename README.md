@@ -5,7 +5,8 @@
 <div>node index.js</div>
 
 # postman collection
-
+(ctrl+click)
+https://elements.getpostman.com/redirect?entityId=20272751-09cad35e-5454-4168-820a-e0de1ec8710c&entityType=collection
 
 # Authenticate using google UI
 <div>loocalhost:3000</div>
