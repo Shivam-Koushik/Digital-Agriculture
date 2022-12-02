@@ -5,7 +5,7 @@
 <div>2=> node index.js</div>
 
 # Authenticate UI
-<div>http://localhost:3000</div>
+http://localhost:3000
 </br>
 <img width="959" alt="img" src="https://user-images.githubusercontent.com/105701108/205136957-1293c61d-0056-4cb9-b999-e2a22e70e529.png">
 
