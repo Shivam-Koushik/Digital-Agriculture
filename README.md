@@ -12,4 +12,4 @@ http://localhost:3000
 
 # postman collection
 (ctrl+click)
-https://elements.getpostman.com/redirect?entityId=20272751-09cad35e-5454-4168-820a-e0de1ec8710c&entityType=collection
+https://elements.getpostman.com/redirect?entityId=20272751-5a59198c-c523-4dee-be7f-3c93eefca759&entityType=collection
