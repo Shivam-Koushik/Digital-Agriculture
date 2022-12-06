@@ -13,7 +13,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: `${process.env.clientID}`,
     clientSecret: `${process.env.clientSecret}`,
-    callbackURL: "http://localhost:3000"
+    callbackURL: "http://localhost:3000/payment"
   },
   function(accessToken, refreshToken, profile, cb) {
       return cb(null, profile); 
